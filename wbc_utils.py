@@ -138,7 +138,7 @@ if len(videos):
 
                 # writing all the frames to it
                 for x in range(frameNr):
-                    newVideo.write( cv2.imread(str(test_images / ('{:04d}'.format(x) + ".jpg"))) )
+                    newVideo.write( cv2.imread(str(cartoonized_images / ('{:04d}'.format(x) + ".jpg"))) )
 
                 print (s + "Merging audio... (not implmented)")
                 ###
