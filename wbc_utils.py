@@ -103,6 +103,7 @@ if len(videos):
         s = f"[{i+1}/{len(videos)}] "
         file = videos[i]
         newFile = dst / (file.stem + "_cartoonized" + file.suffix)
+        newVideo = None
         print (s + "Processing " + file.name + "...")
         
         if newFile.exists():
@@ -138,7 +139,14 @@ if len(videos):
 
                 # writing all the frames to it
                 for x in range(frameNr):
-                    newVideo.write( cv2.imread(str(cartoonized_images / ('{:04d}'.format(x) + ".jpg"))) )
+                    frame = cv2.imread(str(cartoonized_images / ('{:04d}'.format(x) + ".jpg")))
+                    frame = cv2.resize(frame,(w,h)) # force frame to be of the correct size
+                    newVideo.write( frame )
+                    # cv2.imshow('video',frame)
+                    # if cv2.waitKey(1) & 0xFF == ord('q'):
+                    #     break
+
+                # cv2.destroyWindows()
 
                 print (s + "Merging audio... (not implmented)")
                 ###
@@ -150,6 +158,7 @@ if len(videos):
         finally:
             print (s + "Cleaning...")
             video.release()
-            # newVideo.release()
+            if newVideo != None:
+                newVideo.release()
             remove_folder_contents(test_images)
             remove_folder_contents(cartoonized_images)
