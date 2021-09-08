@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>20893cd2-1954-48fa-8f66-aa890b259e0f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>wbc_utils.py</StartupFile>
+    <StartupFile>wbc-utils.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="wbc_utils.py" />
+    <Compile Include="wbc-utils.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="openh264-1.8.0-win64.dll" />

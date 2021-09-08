@@ -10,6 +10,7 @@ import colorama
 colorama.init(autoreset=True)
 
 # constants and utils
+
 imageExtensions = [".png",".jpg", ".jpeg"]
 videoExtensions = [".mp4",".gif"]
 
