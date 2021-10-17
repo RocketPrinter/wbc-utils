@@ -35,20 +35,20 @@ cartoonized_images = test_code / "cartoonized_images"
 src = test_code / "src"
 dst = test_code / "dst"
 
-# make sure these folders exist
-test_images.mkdir(parents=True, exist_ok = True)
-cartoonized_images.mkdir(parents=True, exist_ok = True)
-src.mkdir(parents=True, exist_ok = True)
-dst.mkdir(parents=True, exist_ok = True)
-
 # checks
 if test_code.name != "test_code":
     print(colorama.Fore.RED + "Path needs to be to the folder \"test_code\"")
     sys.exit(-1)
 
+test_images.mkdir(parents=True, exist_ok = True)
+cartoonized_images.mkdir(parents=True, exist_ok = True)
+
 if len(list(test_images.iterdir())) != 0 or len(list(cartoonized_images.iterdir())) != 0:
     print(colorama.Fore.RED + "\"/test_images\" and \"/cartoonized_images\" needs to be empty!")
     sys.exit(-1)
+    
+src.mkdir(parents=True, exist_ok = True)
+dst.mkdir(parents=True, exist_ok = True)
 
 # file sorting
 images = []
